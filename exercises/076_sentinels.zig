@@ -46,7 +46,7 @@ pub fn main() void {
     var nums = [_:0]u32{ 1, 2, 3, 4, 5, 6 };
 
     // And here's a zero-terminated many-item pointer:
-    var ptr: [*:0]u32 = &nums;
+    const ptr: [*:0]u32 = &nums;
 
     // For fun, let's replace the value at position 3 with the
     // sentinel value 0. This seems kind of naughty.
@@ -74,8 +74,8 @@ pub fn main() void {
 fn printSequence(my_seq: anytype) void {
     const my_typeinfo = @typeInfo(@TypeOf(my_seq));
 
-    // The TypeInfo contained in my_type is a union. We use a
-    // switch to handle printing the Array or Pointer fields,
+    // The TypeInfo contained in my_typeinfo is a union. We use
+    // a switch to handle printing the Array or Pointer fields,
     // depending on which type of my_seq was passed in:
     switch (my_typeinfo) {
         .Array => {

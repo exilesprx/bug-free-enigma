@@ -15,7 +15,7 @@ const print = std.debug.print;
 //     1) Getting Started
 //     2) Version Changes
 comptime {
-    const required_zig = "0.12.0-dev.1243";
+    const required_zig = "0.12.0-dev.2618";
     const current_zig = builtin.zig_version;
     const min_zig = std.SemanticVersion.parse(required_zig) catch unreachable;
     if (current_zig.order(min_zig) == .lt) {
@@ -288,7 +288,7 @@ const ZiglingStep = struct {
         // Allow up to 1 MB of stdout capture.
         const max_output_bytes = 1 * 1024 * 1024;
 
-        var result = Child.run(.{
+        const result = Child.run(.{
             .allocator = b.allocator,
             .argv = &.{exe_path},
             .cwd = b.build_root.path.?,
@@ -386,7 +386,7 @@ const ZiglingStep = struct {
         var zig_args = std.ArrayList([]const u8).init(b.allocator);
         defer zig_args.deinit();
 
-        zig_args.append(b.zig_exe) catch @panic("OOM");
+        zig_args.append(b.graph.zig_exe) catch @panic("OOM");
 
         const cmd = switch (self.exercise.kind) {
             .exe => "build-exe",
