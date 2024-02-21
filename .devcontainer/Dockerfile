@@ -5,7 +5,8 @@ ARG VERSION=
 RUN apt-get -y update \
   && apt-get -y install --no-install-recommends wget ca-certificates xz-utils git \
   && apt-get -y clean \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && useradd -m -s /bin/bash -u 1000 zig
 
 WORKDIR /opt
 
@@ -18,6 +19,6 @@ RUN wget https://ziglang.org/builds/zig-linux-x86_64-${VERSION}.tar.xz \
   && mv zig-out/bin/zls /usr/local/bin \
   && rm -rf /opt/zig-linux-x86_64-${VERSION}.tar.xz \
   && rm -rf /opt/zls \
-  && useradd -m -s /bin/bash -u 1000 zig
+  && chown -R zig:zig /usr/local/bin
 
 USER zig
