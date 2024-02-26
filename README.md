@@ -122,3 +122,16 @@
 //    var maybe_bad: Error!u32 = Error.Evil;
 //    var number: u32 = maybe_bad catch 0;
 ```
+
+## Floating point numbers
+```
+// As an example, Zig's f16 is a IEEE 754 "half-precision" binary
+// floating-point format ("binary16"), which is stored in memory
+// like so:
+//
+//         0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0
+//         | |-------| |-----------------|
+//         |  exponent     significand
+//         |
+//          sign
+```
