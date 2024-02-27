@@ -208,3 +208,23 @@
 //     const two: u8 = while (true) break 2 else 0;         // 2
 //     const three: u8 = for ([1]u8{1}) |f| break 3 else 0; // 3
 ```
+
+## Labels
+```
+// As we've just learned, you can return a value using a break
+// statement. Does that mean you can return a value from any
+// labeled block? Yes it does!
+//
+//     const foo = make_five: {
+//         const five = 1 + 1 + 1 + 1 + 1;
+//         break :make_five five;
+//     };
+
+
+// Finally, you can also use block labels with the 'continue'
+// statement:
+//
+//     my_while: while (true) {
+//         continue :my_while;
+//     }
+```
