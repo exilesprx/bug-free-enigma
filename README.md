@@ -31,7 +31,7 @@
 
 ## Error unions
 ```
-//
+// If canFail() fails, foo will equal 6.
 // One way to deal with error unions is to "catch" any error and
 // replace it with a default value.
 //
@@ -87,7 +87,6 @@
 
 ## Optionals
 ```
-// If canFail() fails, foo will equal 6.
 // Sometimes you know that a variable might hold a value or
 // it might not. Zig has a neat way of expressing this idea
 // called Optionals. An optional type just has a '?' like this:
