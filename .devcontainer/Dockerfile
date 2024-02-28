@@ -12,7 +12,7 @@ RUN apt-get -y update \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -m -s /bin/bash -u 1000 zig
 WORKDIR /opt
-RUN wget https://ziglang.org/builds/zig-linux-x86_64-${VERSION}.tar.xz \
+RUN wget -q https://ziglang.org/builds/zig-linux-x86_64-${VERSION}.tar.xz \
   && tar -xf zig-linux-x86_64-${VERSION}.tar.xz \
   && mv zig-linux-x86_64-${VERSION}/* /usr/local/bin \
   && git clone https://github.com/zigtools/zls
