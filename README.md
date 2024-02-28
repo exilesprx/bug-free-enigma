@@ -219,6 +219,15 @@
 //         break :make_five five;
 //     };
 
+// Being able to return a value from an
+// inner loop is sometimes so handy, it almost feels like cheating
+// (and can help you avoid creating a lot of temporary variables).
+//
+//     const bar: u8 = two_loop: while (true) {
+//         while (true) {
+//             break :two_loop 2;
+//         }
+//     } else 0;
 
 // Finally, you can also use block labels with the 'continue'
 // statement:
