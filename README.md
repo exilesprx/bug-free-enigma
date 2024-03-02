@@ -236,3 +236,25 @@
 //         continue :my_while;
 //     }
 ```
+
+## Comptime
+```
+// ALL numeric literals in Zig are of type comptime_int or
+// comptime_float. They are of arbitrary size (as big or
+// little as you need).
+//
+// Notice how we don't have to specify a size like "u8",
+// "i32", or "f64" when we assign identifiers immutably with
+// "const".
+//
+// When we use these identifiers in our program, the VALUES
+// are inserted at compile time into the executable code. The
+// IDENTIFIERS "const_int" and "const_float" don't exist in
+// our compiled application!
+//
+// const const_int = 12345;
+// const const_float = 987.654;
+//
+// But something changes when we assign the exact same values
+// to identifiers mutably with "var".
+```
