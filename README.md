@@ -257,4 +257,19 @@
 //
 // But something changes when we assign the exact same values
 // to identifiers mutably with "var".
+
+// When placed before a variable declaration, 'comptime'
+// guarantees that every usage of that variable will be performed
+// at compile time.
+//
+// As a simple example, compare these two statements:
+//
+//    var bar1 = 5;            // ERROR!
+//    comptime var bar2 = 5;   // OKAY!
+//
+// The first one gives us an error because Zig assumes mutable
+// identifiers (declared with 'var') will be used at runtime and
+// we have not assigned a runtime type (like u8 or f32). Trying
+// to use a comptime_int of undetermined size at runtime is
+// a MEMORY CRIME and you are UNDER ARREST.
 ```
