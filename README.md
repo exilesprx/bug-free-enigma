@@ -352,4 +352,24 @@
 //         const baz = biff() + bonk();
 //         break :bar baz;
 //     }
+
+// In addition to knowing when to use the 'comptime' keyword,
+// it's also good to know when you DON'T need it.
+//
+// The following contexts are already IMPLICITLY evaluated at
+// compile time, and adding the 'comptime' keyword would be
+// superfluous, redundant, and smelly:
+//
+//    * The container-level scope (outside of any function in a source file)
+//    * Type declarations of:
+//        * Variables
+//        * Functions (types of parameters and return values)
+//        * Structs
+//        * Unions
+//        * Enums
+//    * The test expressions in inline for and while loops
+//    * An expression passed to the @cImport() builtin
+//
+// Work with Zig for a while, and you'll start to develop an
+// intuition for these contexts. Let's work on that now.
 ```
