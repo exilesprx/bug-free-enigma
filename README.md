@@ -321,4 +321,9 @@
 //
 // In the above example, we're looping over a list of types,
 // which are available only at compile time.
+
+//
+// There is also an 'inline while'. Just like 'inline for', it
+// loops at compile time, allowing you to do all sorts of
+// interesting things not possible at runtime.
 ```
