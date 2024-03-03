@@ -272,4 +272,13 @@
 // we have not assigned a runtime type (like u8 or f32). Trying
 // to use a comptime_int of undetermined size at runtime is
 // a MEMORY CRIME and you are UNDER ARREST.
+
+//
+// You can also put 'comptime' before a function parameter to
+// enforce that the argument passed to the function must be known
+// at compile time. We've actually been using a function like
+// this the entire time, std.debug.print():
+//
+//     fn print(comptime fmt: []const u8, args: anytype) void
+//
 ```
