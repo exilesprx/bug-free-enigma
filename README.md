@@ -308,4 +308,17 @@
 // be performed entirely at compile time.
 
 // methods declared in namespaces is also known as "decls"
+
+//
+// An 'inline for' is performed at compile time, allowing you to
+// programatically loop through a series of items in situations
+// like those mentioned above where a regular runtime 'for' loop
+// wouldn't be allowed:
+//
+//     inline for (.{ u8, u16, u32, u64 }) |T| {
+//         print("{} ", .{@typeInfo(T).Int.bits});
+//     }
+//
+// In the above example, we're looping over a list of types,
+// which are available only at compile time.
 ```
