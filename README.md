@@ -378,8 +378,6 @@
 // about the type that has been passed in. All of this logic will
 // be performed entirely at compile time.
 
-// methods declared in namespaces is also known as "decls"
-
 //
 // An 'inline for' is performed at compile time, allowing you to
 // programatically loop through a series of items in situations
