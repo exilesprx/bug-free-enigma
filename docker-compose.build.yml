@@ -1,0 +1,7 @@
+services:
+  zig:
+    image: exilesprx\ziglings:latest
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      target: build
