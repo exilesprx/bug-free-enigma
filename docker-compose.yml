@@ -1,10 +1,7 @@
 services:
 
   ziglings:
-    build:
-      dockerfile: .devcontainer/Dockerfile
-      args:
-        VERSION: "0.12.0-dev.3158+1e67f5021"
+    image: exilesprx/ziglings:latest
     volumes:
       - .:/opt/ziglings.org/
     working_dir: /opt/ziglings.org

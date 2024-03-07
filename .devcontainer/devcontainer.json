@@ -1,14 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-	"name": "Debian",
+	"name": "Ziglings",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VERSION": "0.12.0-dev.3158+1e67f5021"
-		}
-	},
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "ziglings",
 	"customizations": {
 	  "vscode": {
 	    "extensions": [
