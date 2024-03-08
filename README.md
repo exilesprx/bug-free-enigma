@@ -502,4 +502,17 @@
 //
 // You can also have completely anonymous structs. The value
 // of @typeName(struct {}) is "struct:<position in source>".
+//
+
+//
+// An anonymous struct value LITERAL (not to be confused with a
+// struct TYPE) uses '.{}' syntax:
+//
+//     .{
+//          .center_x = 15,
+//          .center_y = 12,
+//          .radius = 6,
+//     }
+//
+// These literals are always evaluated entirely at compile-time.
 ```
