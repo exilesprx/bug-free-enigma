@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .devcontainer/Dockerfile
+      - .docker/Dockerfile
 
 permissions:
   contents: read

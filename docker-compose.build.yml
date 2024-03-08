@@ -1,7 +1,9 @@
 services:
   zig:
-    image: exilesprx\ziglings:latest
+    image: exilesprx/ziglings:latest
     build:
+      args:
+        VERSION: "0.12.0-dev.3158+1e67f5021"
       context: .
       dockerfile: .docker/Dockerfile
       target: build

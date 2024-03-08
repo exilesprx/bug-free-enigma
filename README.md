@@ -515,4 +515,28 @@
 //     }
 //
 // These literals are always evaluated entirely at compile-time.
+
+//
+// You can even create anonymous struct literals without field
+// names:
+//
+//     .{
+//         false,
+//         @as(u32, 15),
+//         @as(f64, 67.12)
+//     }
+//
+// We call these "tuples", which is a term used by many
+// programming languages for a data type with fields referenced
+// by index order rather than name. To make this possible, the Zig
+// compiler automatically assigns numeric field names 0, 1, 2,
+// etc. to the struct.
+//
+// Since bare numbers are not legal identifiers (foo.0 is a
+// syntax error), we have to quote them with the @"" syntax.
+// Example:
+//
+//     const foo = .{ true, false };
+//
+//     print("{} {}\n", .{foo.@"0", foo.@"1"});
 ```
