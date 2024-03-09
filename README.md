@@ -625,4 +625,16 @@
 // is that they retain their state as they are suspended and
 // resumed.
 //
+
+//
+// The 'await' keyword waits for an async function to complete
+// and then captures its return value.
+//
+//     fn foo() u32 {
+//         return 5;
+//     }
+//
+//    var foo_frame = async foo(); // invoke and get frame
+//    var value = await foo_frame; // await result using frame
+//
 ```
