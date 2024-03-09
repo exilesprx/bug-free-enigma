@@ -637,4 +637,29 @@
 //    var foo_frame = async foo(); // invoke and get frame
 //    var value = await foo_frame; // await result using frame
 //
+
+//
+// Remember how a function with 'suspend' is async and calling an
+// async function without the 'async' keyword makes the CALLING
+// function async?
+//
+//     fn fooThatMightSuspend(maybe: bool) void {
+//         if (maybe) suspend {}
+//     }
+//
+//     fn bar() void {
+//         fooThatMightSuspend(true); // Now bar() is async!
+//     }
+//
+// But if you KNOW the function won't suspend, you can make a
+// promise to the compiler with the 'nosuspend' keyword:
+//
+//     fn bar() void {
+//         nosuspend fooThatMightSuspend(false);
+//     }
+//
+// If the function does suspend and YOUR PROMISE TO THE COMPILER
+// IS BROKEN, the program will panic at runtime, which is
+// probably better than you deserve, you oathbreaker! >:-(
+//
 ```
