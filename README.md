@@ -206,6 +206,34 @@
 //
 //     const two: u8 = while (true) break 2 else 0;         // 2
 //     const three: u8 = for ([1]u8{1}) |f| break 3 else 0; // 3
+
+// Until version 0.11, Zig's 'for' loops did not directly
+// replicate the functionality of the C-style: "for(a;b;c)"
+// which are so well suited for iterating over a numeric
+// sequence.
+//
+// Instead, 'while' loops with counters clumsily stood in their
+// place:
+//
+//     var i: usize = 0;
+//     while (i < 10) : (i += 1) {
+//         // Here variable 'i' will have each value 0 to 9.
+//     }
+//
+// But here we are in the glorious future and Zig's 'for' loops
+// can now take this form:
+//
+//     for (0..10) |i| {
+//         // Here variable 'i' will have each value 0 to 9.
+//     }
+//
+// The key to understanding this example is to know that '0..9'
+// uses the new range syntax:
+//
+//     0..10 is a range from 0 to 9
+//     1..4  is a range from 1 to 3
+//
+// At the moment, ranges are only supported in 'for' loops.
 ```
 
 ## Labels
