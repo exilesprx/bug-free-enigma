@@ -799,3 +799,32 @@
 // e.g. "zig run -lc hello_c.zig".
 //
 ```
+
+## Memory allocation
+```
+//
+// Zig provides several different allocators. In the Zig
+// documentation, it recommends the Arena allocator for simple
+// programs which allocate once and then exit:
+//
+//     const std = @import("std");
+//
+//     // memory allocation can fail, so the return type is !void
+//     pub fn main() !void {
+//
+//         var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+//         defer arena.deinit();
+//
+//         const allocator = arena.allocator();
+//
+//         const ptr = try allocator.create(i32);
+//         std.debug.print("ptr={*}\n", .{ptr});
+//
+//         const slice_ptr = try allocator.alloc(f64, 5);
+//         std.debug.print("slice_ptr={*}\n", .{slice_ptr});
+//     }
+
+//
+// For more details on memory allocation and the different types of
+// memory allocators, see https://www.youtube.com/watch?v=vHWiDx_l4V0
+```
