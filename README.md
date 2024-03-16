@@ -829,7 +829,38 @@
 // memory allocators, see https://www.youtube.com/watch?v=vHWiDx_l4V0
 ```
 
-## Bit manipulation
+## Formatting
 ```
+//
+// C set string formatting standards over the years, and Zig is
+// following suit and growing daily. Due to this growth, there is
+// no official documentation for standard library features such
+// as string formatting.
+//
+// Therefore, the comments for the format() function are the only
+// way to definitively learn how to format strings in Zig:
+//
+//     https://github.com/ziglang/zig/blob/master/lib/std/fmt.zig#L29
+//
 
+//
+// And this is where it gets exciting, because format() accepts a
+// variety of formatting instructions. It's basically a tiny
+// language of its own. Here's a numeric example:
+//
+//     print("Catch-{x:0>4}.", .{twenty_two});
+//
+// This formatting instruction outputs a hexadecimal number with
+// leading zeros:
+//
+//     Catch-0x0016.
+//
+// Or you can center-align a string like so:
+//
+//     print("{s:*^20}\n", .{"Hello!"});
+//
+// Output:
+//
+//     *******Hello!*******
+//
 ```
