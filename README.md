@@ -1011,3 +1011,28 @@
 //        }
 //
 ```
+
+## Threading
+
+```
+// These curly brackets are very important, they are necessary
+// to enclose the area where the threads are called.
+// Without these brackets, the program would not wait for the
+// end of the threads and they would continue to run beyond the
+// end of the program.
+// pub fn main() void {
+//    {
+//        Now we start the first thread, with the number as parameter
+//        const handle = try std.Thread.spawn(.{}, thread_function, .{1});
+//
+//        Waits for the thread to complete,
+//        then deallocates any resources created on `spawn()`.
+//        defer handle.join();
+//    }
+// }
+//
+```
+
+```
+
+```
