@@ -256,6 +256,25 @@
 // *either* of these lists. That error-prone stuff is all taken
 // care of for us by the compiler.
 //
+
+//
+// The 'for' loop is not just limited to looping over one or two
+// items. Let's try an example with a whole bunch!
+//
+// But first, there's one last thing we've avoided mentioning
+// until now: The special range that leaves off the last value:
+//
+//     for ( things, 0.. ) |t, i| { ... }
+//
+// That's how we tell Zig that we want to get a numeric value for
+// every item in "things", starting with 0.
+//
+// A nice feature of these index ranges is that you can have them
+// start with any number you choose. The first value of "i" in
+// this example will be 500, then 501, 502, etc.:
+//
+//     for ( things, 500.. ) |t, i| { ... }
+//
 ```
 
 ## Labels
@@ -895,5 +914,27 @@
 // Output:
 //
 //     *******Hello!*******
+//
+```
+
+## Data-oriented design
+
+```
+//
+// In the Zig community, you may see the difference in groupings
+// presented with the terms "Array of Structs" (AoS) versus
+// "Struct of Arrays" (SoA).
+//
+// To envision these two designs in action, imagine an array of
+// RPG character structs, each containing three different data
+// types (AoS) versus a single RPG character struct containing
+// three arrays of one data type each, like those in the exercise
+// above (SoA).
+//
+
+//
+// For a more practical application of "data-oriented design"
+// watch the following talk from Andrew Kelley, the creator of Zig:
+// https://vimeo.com/649009599
 //
 ```
