@@ -878,6 +878,17 @@
 //
 // For more details on memory allocation and the different types of
 // memory allocators, see https://www.youtube.com/watch?v=vHWiDx_l4V0
+
+//
+//        // In order to be able to process the input values,
+//        // memory is required. An allocator is defined here for
+//        // this purpose.
+//        const ally = std.testing.allocator;
+//
+//        // The allocator is used to initialize an array into which
+//        // the numbers are stored.
+//        var list = std.ArrayList(u32).init(ally);
+//
 ```
 
 ## Formatting
@@ -962,5 +973,43 @@
 //
 // Tests can be run via Zig build system or applied directly to
 // individual modules using "zig test xyz.zig".
+//
+```
+
+## Tokenization
+
+```
+//
+//        // In order to be able to process the input values,
+//        // memory is required. An allocator is defined here for
+//        // this purpose.
+//        const ally = std.testing.allocator;
+//
+//        // The allocator is used to initialize an array into which
+//        // the numbers are stored.
+//        var list = std.ArrayList(u32).init(ally);
+//
+//
+//        // This way you can never forget what is urgently needed
+//        // and the compiler doesn't grumble either.
+//        defer list.deinit();
+//
+//        // Now it gets exciting:
+//        // A standard tokenizer is called (Zig has several) and
+//        // used to locate the positions of the respective separators
+//        // (we remember, space and comma) and pass them to an iterator.
+//        var it = std.mem.tokenizeAny(u8, input, " ,");
+//
+//        // The iterator can now be processed in a loop and the
+//        // individual numbers can be transferred.
+//        while (it.next()) |num| {
+//            // But be careful: The numbers are still only available
+//            // as strings. This is where the integer parser comes
+//            // into play, converting them into real integer values.
+//            const n = try parseInt(u32, num, 10);
+//
+//            // Finally the individual values are stored in the array.
+//            try list.append(n);
+//        }
 //
 ```
