@@ -938,3 +938,29 @@
 // https://vimeo.com/649009599
 //
 ```
+
+## Testing
+
+```
+
+//
+// A big advantage of Zig is the integration of its own test system.
+// This allows the philosophy of Test Driven Development (TDD) to be
+// implemented perfectly. Zig even goes one step further than other
+// languages, the tests can be included directly in the source file.
+//
+// This has several advantages. On the one hand it is much clearer to
+// have everything in one file, both the source code and the associated
+// test code. On the other hand, it is much easier for third parties
+// to understand what exactly a function is supposed to do if they can
+// simply look at the test inside the source and compare both.
+//
+// Especially if you want to understand how e.g. the standard library
+// of Zig works, this approach is very helpful. Furthermore it is very
+// practical, if you want to report a bug to the Zig community, to
+// illustrate it with a small example including a test.
+//
+// Tests can be run via Zig build system or applied directly to
+// individual modules using "zig test xyz.zig".
+//
+```
