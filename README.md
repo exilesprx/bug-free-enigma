@@ -1,6 +1,7 @@
 ## Cheatsheet
 
 ## Pointers
+
 ```
 //     FREE ZIG POINTER CHEATSHEET! (Using u8 as the example type.)
 //   +---------------+----------------------------------------------+
@@ -17,6 +18,7 @@
 ```
 
 ## Tagged unions - exercise 057
+
 ```
 // If you don't have a need for a separate enum, you can define
 // an inferred enum with your union all in one place. Just use
@@ -30,6 +32,7 @@
 ```
 
 ## Error unions
+
 ```
 // If canFail() fails, foo will equal 6.
 // One way to deal with error unions is to "catch" any error and
@@ -86,6 +89,7 @@
 ```
 
 ## Optionals
+
 ```
 // Sometimes you know that a variable might hold a value or
 // it might not. Zig has a neat way of expressing this idea
@@ -123,6 +127,7 @@
 ```
 
 ## Floating point numbers
+
 ```
 // As an example, Zig's f16 is a IEEE 754 "half-precision" binary
 // floating-point format ("binary16"), which is stored in memory
@@ -136,6 +141,7 @@
 ```
 
 ## Coerce
+
 ```
 //
 // 1. Types can always be made _more_ restrictive.
@@ -197,6 +203,7 @@
 ```
 
 ## Loop expressions
+
 ```
 // But what value is returned from a loop if a break statement is
 // never reached? We need a default expression. Thankfully, Zig
@@ -234,9 +241,25 @@
 //     1..4  is a range from 1 to 3
 //
 // At the moment, ranges are only supported in 'for' loops.
+
+//
+// The general form of a 'for' loop with two lists is:
+//
+//     for (list_a, list_b) |a, b| {
+//         // Here we have the first item from list_a and list_b,
+//         // then the second item from each, then the third and
+//         // so forth...
+//     }
+//
+// What's really beautiful about this is that we don't have to
+// keep track of an index or advancing a memory pointer for
+// *either* of these lists. That error-prone stuff is all taken
+// care of for us by the compiler.
+//
 ```
 
 ## Labels
+
 ```
 // As we've just learned, you can return a value using a break
 // statement. Does that mean you can return a value from any
@@ -266,6 +289,7 @@
 ```
 
 ## Comptime
+
 ```
 // ALL numeric literals in Zig are of type comptime_int or
 // comptime_float. They are of arbitrary size (as big or
@@ -403,6 +427,7 @@
 ```
 
 ## Sentinels
+
 ```
 // A sentinel value indicates the end of data. Let's imagine a
 // sequence of lowercase letters where uppercase 'S' is the
@@ -479,7 +504,9 @@
 //
 //     @ptrCast(value: anytype) anytype
 ```
+
 ## Quoted identifiers
+
 ```
 //
 // Sometimes you need to create an identifier that will not, for
@@ -502,6 +529,7 @@
 ```
 
 ## Structs
+
 ```
 //
 // Struct types are always "anonymous" until we give them a name:
@@ -583,6 +611,7 @@
 ```
 
 ## Async - regressed and not present in the current version as of writing this
+
 ```
 //
 // Six Facts:
@@ -706,6 +735,7 @@
 ```
 
 ## Interfaces
+
 ```
 //
 // Remember our ant and bee simulator constructed with unions
@@ -758,6 +788,7 @@
 ```
 
 ## C integration
+
 ```
 //
 // When Andrew Kelley announced the idea of a new programming language
@@ -801,6 +832,7 @@
 ```
 
 ## Memory allocation
+
 ```
 //
 // Zig provides several different allocators. In the Zig
@@ -830,6 +862,7 @@
 ```
 
 ## Formatting
+
 ```
 //
 // C set string formatting standards over the years, and Zig is
