@@ -1,5 +1,11 @@
 ## Cheatsheet
 
+## Namespaces
+
+```
+// methods declared in namespaces is also known as "decls"
+```
+
 ## Pointers
 
 ```
