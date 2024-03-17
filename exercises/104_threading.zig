@@ -97,12 +97,12 @@ pub fn main() !void {
         defer handle.join();
 
         // Second thread
-        const handle2 = try std.Thread.spawn(.{}, thread_function, .{-4}); // that can't be right?
+        const handle2 = try std.Thread.spawn(.{}, thread_function, .{2}); // that can't be right?
         defer handle2.join();
 
         // Third thread
         const handle3 = try std.Thread.spawn(.{}, thread_function, .{3});
-        defer ??? // <-- something is missing
+        defer handle3.join(); // <-- something is missing
 
         // After the threads have been started,
         // they run in parallel and we can still do some work in between.
