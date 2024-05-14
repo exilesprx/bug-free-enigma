@@ -1,4 +1,4 @@
-FROM debian:bookworm-20240423-slim AS build
+FROM debian:bookworm-20240513-slim AS build
 
 ARG VERSION=
 
