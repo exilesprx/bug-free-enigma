@@ -3,3 +3,4 @@
 /answers/
 /patches/healed/
 /bin/
+.zig-cache/
